@@ -68,3 +68,26 @@ BOTÓN DE NAVEGACIÓN
     height: 62%;
     width: 62%;
 }
+
+/* 
+-----------------------------------------------------------------------------
+BOTÓN DE CHAT 
+-----------------------------------------------------------------------------
+*/
+
+.boton-chat {
+    position: fixed;
+    margin: 2% 1%;
+    height: 10vh;
+    width: 10vh;
+    bottom: 1%;
+    right: 1%;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: #FFF35F;
+}
+
+.boton-chat p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
