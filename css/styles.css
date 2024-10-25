@@ -103,10 +103,28 @@ BOTÓN DE NAVEGACIÓN
     justify-content: center;
 }
 
-.boton-navegacion img {
+.boton-navegacion #icono-rayas-menu {
     height: 62%;
     width: 62%;
 }
+
+.boton-navegacion #icono-equis-menu {
+    height: 80%;
+    width: 80%;
+}
+
+#icono-equis-menu {
+    display: none;
+}
+
+#checkbox-menu:checked ~ .boton-navegacion #icono-rayas-menu {
+    display: none;
+}
+
+#checkbox-menu:checked ~ .boton-navegacion #icono-equis-menu {
+    display: inline;
+}
+
 
 #checkbox-menu:checked ~ .boton-navegacion {
     filter: brightness(0.87);
