@@ -92,8 +92,8 @@ BOTÓN DE NAVEGACIÓN
     position: absolute;
     background-color: #F1B4D6;
     margin: 2% 1%;
-    width: clamp(60px, 9vw, 80px);
-    height: clamp(60px, 9vw, 80px);
+    width: clamp(48px, 9vw, 80px);
+    height: clamp(48px, 9vw, 80px);
     right: 1%;
     border: 2px solid black;
     border-radius: 50%;
@@ -106,12 +106,10 @@ BOTÓN DE NAVEGACIÓN
 
 .boton-navegacion #icono-rayas-menu {
     height: 62%;
-    width: 62%;
 }
 
 .boton-navegacion #icono-equis-menu {
     height: 80%;
-    width: 80%;
 }
 
 #icono-equis-menu {
@@ -152,58 +150,15 @@ MENU DE NAVEGACIÓN
 }
 
 .menu-navegacion {
-    position: absolute;
-    top: clamp(80px, 12vw, 110px);
-    right: clamp(70px, 12vw, 110px);
+    min-width: 100px;
+    min-height: 200px;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: repeat(4, 4fr);
+    font-size: clamp(5px, 1rem, 2rem);
+    line-height: 100px;
 }
 
-#primero::before {
-    content: ''; /* Required for the pseudo-element */
-    position: absolute; /* Position it absolutely */
-    width: clamp(20px, 5vw, 30px); /* Set the width of the image */
-    height: clamp(20px, 5vw, 30px); /* Set the height of the image */
-    right: clamp(122px, 5vw, 150px);
-    background-image: url('../img/heart.svg'); /* Image for first item */
-    background-size: contain; /* Resize to fit */
-    background-repeat: no-repeat; /* Prevent repeating */
-    transition: transform 0.5s ease;
-}
-
-#segundo::before {
-    content: ''; /* Required for the pseudo-element */
-    position: absolute; /* Position it absolutely */
-    width: clamp(20px, 5vw, 30px); /* Set the width of the image */
-    height: clamp(25px, 5vw, 30px); /* Set the height of the image */
-    right: clamp(122px, 5vw, 150px);
-    background-image: url('../img/estrella.svg'); /* Image for first item */
-    background-size: contain; /* Resize to fit */
-    background-repeat: no-repeat; /* Prevent repeating */
-    transition: transform 0.5s ease;
-}
-
-#tercero::before {
-    content: ''; /* Required for the pseudo-element */
-    position: absolute; /* Position it absolutely */
-    width: clamp(25px, 3vw, 25px); /* Set the width of the image */
-    height: clamp(20px, 3vw, 25px); /* Set the height of the image */
-    right: clamp(118px, 23vw, 124px);
-    background-image: url('../img/figura.svg'); /* Image for first item */
-    background-size: contain; /* Resize to fit */
-    background-repeat: no-repeat; /* Prevent repeating */
-    transition: transform 0.5s ease;
-}
-
-#cuarto::before {
-    content: ''; /* Required for the pseudo-element */
-    position: absolute; /* Position it absolutely */
-    width: clamp(25px, 3vw, 28px); /* Set the width of the image */
-    height: clamp(20px, 3vw, 30px); /* Set the height of the image */
-    right: clamp(118px, 23vw, 124px);
-    background-image: url('../img/polvora.svg'); /* Image for first item */
-    background-size: contain; /* Resize to fit */
-    background-repeat: no-repeat; /* Prevent repeating */
-    transition: transform 0.5s ease;
-}
 
 /* 
 -----------------------------------------------------------------------------
@@ -216,7 +171,7 @@ TITULO E IMAGENES SECCION INICIAL
     color: #1357EB;
     font-size: clamp(1rem, 9.5vw, 5rem);
     text-align: center;
-    top: 36vh;
+    top: clamp(240px, 30vw,1000px );
     font-weight: 500;
     z-index: 1;
 }
@@ -227,10 +182,12 @@ TITULO E IMAGENES SECCION INICIAL
     text-align: center;
     display: flex;
     border: 2px solid black;
-    top: 44%;
+    top: 50%;
     border-radius: 40%;
     overflow: hidden;
+    margin-top: -3%;
     width: clamp(300px, 5vw, 1000px);
+    height: clamp(300px, 5vw, 1000px);
 
 }
 
@@ -249,8 +206,8 @@ BOTÓN DE CHAT
 .boton-chat {
     position: fixed;
     margin: 2% 1%;
-    width: clamp(70px, 12vw, 100px);
-    height: clamp(70px, 12vw, 100px);
+    width: clamp(48px, 11vw, 80px);
+    height: clamp(48px, 11vw, 80px);
     bottom: 1%;
     right: 1%;
     border: 2px solid black;
@@ -259,7 +216,7 @@ BOTÓN DE CHAT
 }
 
 .boton-chat p {
-    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-size: clamp(0.6rem, 2vw, 1.5rem);
     font-weight: 600;
     font-family: sans-serif;
 }
