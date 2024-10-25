@@ -11,12 +11,42 @@
     margin: auto;
 }
 
+/* 
+-----------------------------------------------------------------------------
+SECCIONES DE LA PAGINA
+-----------------------------------------------------------------------------
+*/
+
 .seccion-inicial {
     height: 60vh;
     background-color: #F1B4D6;
 }
 
-/* ESTILOS PARA EL BOTÓN DE NAVEGACIÓN */
+.seccion-nosotros {
+    height: 100vh;
+    background-color: #FFF35F;
+}
+
+.seccion-galeria {
+    height: 70vh;
+    background-color: orangered;
+}
+
+.seccion-precios {
+    height: 160vh;
+    background-color: aliceblue;
+}
+
+.seccion-contacto {
+    height: 100vh;
+    background-color: #F1B4D6;
+}
+
+/* 
+-----------------------------------------------------------------------------
+BOTÓN DE NAVEGACIÓN 
+-----------------------------------------------------------------------------
+*/
 
 .boton-navegacion {
     position: absolute;
