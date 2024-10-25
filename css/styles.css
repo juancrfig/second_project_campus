@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "Gulfs Display";
+    src: url('../fonts/gulfs/GulfsDisplay-Normal.woff2') format('woff2');
+    src: url('../fonts/gulfs/GulfsDisplay-Normal.woff') format('woff');
+    src: url('../fonts/gulfs/GulfsDisplay-Normal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: auto;
+}
+
+.seccion-inicial {
+    height: 60vh;
+    background-color: #F1B4D6;
+}
+
+/* ESTILOS PARA EL BOTÓN DE NAVEGACIÓN */
+
+.boton-navegacion {
+    position: absolute;
+    background-color: transparent;
+    margin: 2% 1%;
+    height: 7vh;
+    width: 7vh;
+    right: 1%;
+    border: 2px solid black;
+    border-radius: 50%;
+    border-right: 4.5px solid black;
+    border-bottom: 4.5px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton-navegacion img {
+    height: 62%;
+    width: 62%;
+}

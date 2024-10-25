@@ -1,0 +1,346 @@
+@font-face {
+    font-family: "Gulfs Display";
+    src: url('../fonts/gulfs/GulfsDisplay-Normal.woff2') format('woff2');
+    src: url('../fonts/gulfs/GulfsDisplay-Normal.woff') format('woff');
+    src: url('../fonts/gulfs/GulfsDisplay-Normal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: auto;
+}
+
+.chat {
+    position: fixed;
+    height: 10vh;
+    width: 12vw;
+    border-radius: 100%;
+    border: 1px solid black;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-weight: 600;
+    background-color: #FFF35F;
+}
+
+.chat:hover {
+    cursor: pointer;
+    background-color: #ffec16;
+}
+
+.inicial-arriba {
+    background-color: #FEB4CD;
+    height: 50vh;
+    border-bottom: 1px solid black;
+}
+
+.inicial-abajo {
+    background-color: #FFF35F;
+    height: 100vh;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:not(:checked) ~ .contenido-menu {
+    position: absolute;
+    opacity: 0;
+}
+
+.contenido-menu {
+    transition: opacity 0.4s ease-in;
+}
+
+#menu-toggle:checked ~ .contenido-menu {
+    position: absolute;
+    opacity: 1;
+    z-index: 10;
+}
+
+.boton-menu {
+    background-color: #FEB4CD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 6vh;
+    width: 8vw;
+    border: 2px solid black;
+    border-right: 5px solid black;
+    border-bottom: 5px solid black;
+    border-radius: 100%;
+    right: 3vw;
+    top: 2vh;
+    transition: 150ms ease;
+}
+
+.contenido-menu a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#rayas-menu-nav {
+    height: 4vh;
+    width: 4vw;
+    position: absolute;
+}
+
+#cruz-menu-nav {
+    height: 5.5vh;
+    width: 5.5vw;
+    position: absolute;
+}
+
+.boton-menu:hover {
+    background-color: #ff83ac;
+    cursor: pointer;
+}
+
+#menu-toggle:checked + .boton-menu {
+    background-color: #ff83ac;
+    scale: 1.09;
+}
+
+#menu-toggle:checked + .boton-menu #rayas-menu-nav{
+    display: none;
+}
+
+#menu-toggle:not(:checked) + .boton-menu #cruz-menu-nav{
+    display: none;
+}
+
+#menu-toggle:checked .contenido-menu {
+    position: absolute;
+}
+
+.contenido-menu {
+    top: 6vh;
+    right: 18vw;
+}
+
+.lista-navegacion {
+    list-style: none;
+}
+
+.lista-navegacion li {
+    position: relative;
+    padding-left: 1vw;
+}
+
+
+#primer-item::before {
+    content: ''; /* Required for the pseudo-element */
+    position: absolute; /* Position it absolutely */
+    right: 105%; /* Align to the left */
+    top: 0; /* Align to the top */
+    width: 28px; /* Set the width of the image */
+    height: 28px; /* Set the height of the image */
+    background-image: url('../img/heart.svg'); /* Image for first item */
+    background-size: contain; /* Resize to fit */
+    background-repeat: no-repeat; /* Prevent repeating */
+    transition: transform 0.5s ease;
+}
+
+#primer-item:hover::before {
+    transform: rotate(360deg);
+}
+
+#segundo-item::before {
+    content: ''; /* Required for the pseudo-element */
+    position: absolute; /* Position it absolutely */
+    right: 103%; /* Align to the left */
+    top: -10%; /* Align to the top */
+    width: 30px; /* Set the width of the image */
+    height: 30px; /* Set the height of the image */
+    background-image: url('../img/estrella.svg'); /* Image for first item */
+    background-size: contain; /* Resize to fit */
+    background-repeat: no-repeat; /* Prevent repeating */
+    transition: transform 0.5s ease;
+}
+
+#segundo-item:hover::before {
+    transform: rotate(360deg);
+}
+
+#tercer-item::before {
+    content: ''; /* Required for the pseudo-element */
+    position: absolute; /* Position it absolutely */
+    right: 103%; /* Align to the left */
+    top: -10%; /* Align to the top */
+    width: 30px; /* Set the width of the image */
+    height: 30px; /* Set the height of the image */
+    background-image: url('../img/figura.svg'); /* Image for first item */
+    background-size: contain; /* Resize to fit */
+    background-repeat: no-repeat; /* Prevent repeating */
+    transition: transform 0.8s ease;
+}
+
+#tercer-item:hover::before {
+    transform: rotate(360deg)
+}
+
+#cuarto-item::before {
+    content: ''; /* Required for the pseudo-element */
+    position: absolute; /* Position it absolutely */
+    right: 104%; /* Align to the left */
+    top: -15%; /* Align to the top */
+    width: 30px; /* Set the width of the image */
+    height: 30px; /* Set the height of the image */
+    background-image: url('../img/polvora.svg'); /* Image for first item */
+    background-size: contain; /* Resize to fit */
+    background-repeat: no-repeat; /* Prevent repeating */
+    transition: transform 0.8s ease;
+}
+
+#cuarto-item:hover::before {
+    transform: rotate(360deg)
+}
+
+li {
+    margin: 5%;
+    font-family: "Gulfs Display";
+    font-size: 1.2rem;
+    letter-spacing: 0.12rem;
+}
+
+.seccion-inicial h1 span{
+    display: inline-block;
+    position: absolute;
+    font-family: "Gulfs Display";
+    color: #025FFC;
+    font-size: 2.5rem;
+    letter-spacing: 0.12rem;
+}
+
+span {
+    position: absolute;
+    z-index: 2;
+}
+
+#capturamos {
+    top: 21vh;
+    left: 17vw;
+}
+
+#los {
+    top: 25vh;
+    left: 41vw;
+}
+
+#senti {
+    top: 29vh;
+    left: 11vw;
+}
+
+.caja-imagen-principal {
+    position: absolute;
+    top: 31vh;
+    left: 15vw;
+    z-index: 1;
+    border: 1.5px solid black;
+    overflow: hidden;
+    border-radius: 42%;
+    display: flex;
+}
+
+#imagen-principal {
+    height: 50vh;
+    width: 70vw;
+    border-bottom: 1.5px solid black;    
+}
+
+#rayo-celeste {
+    position: absolute;
+    top: 34vh;
+    right: 7vw;
+    height: 4%;
+    width: 14%;
+}
+
+#estrella1 {
+    position: absolute;
+    top: 35vh;
+    left: 6vw;
+    height: 4%;
+    width: 8%;  
+}
+
+#estrella2 {
+    position: absolute;
+    top: 25vh;
+    left: 14vw;
+    height: 2%;
+    width: 5%;  
+}
+
+#estrella3 {
+    position: absolute;
+    top: 41vh;
+    right: 8vw;
+    height: 3%;
+    width: 6%;  
+}
+
+#circulo-rosa {
+    position: absolute;
+    height: 10vh;
+    width: 20vw;
+    top: 70vh;
+    left: 10vw;
+    z-index: 3;
+}
+
+.fondo-blanco {
+    background-color: white;
+    height: 70vh;
+}
+
+.fondo-naranja {
+    background-color:#FF6541;
+    height: 30vh;
+}
+
+@media (min-width:100px) and (max-width: 520px) {
+
+    .chat {
+        height: 8vh;
+        width: 18vw;
+    }
+
+    .boton-menu {
+        height: 5vh;
+        width: 10vw; 
+    }
+
+    #rayas-menu-nav {
+        height: 10vh;
+        width: 6vw;
+        position: absolute;
+    }
+    
+    #cruz-menu-nav {
+        height: 4vh;
+        width: 9vw;
+        position: absolute;
+    }
+
+} 
+
+@media (min-width:521px) and (max-width: 767px) {
+
+    .chat {
+        height: 8vh;
+        width: 14vw;
+    }
+
+    .boton-menu {
+        height: 6vh;
+        width: 10vw; 
+    }
+
+}
