@@ -9,15 +9,25 @@
 
 * {
     margin: auto;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color:inherit
 }
 
 .oculto {
     display: none;
 }
 
+.gulfs {
+    font-family: "Gulfs Display";
+    letter-spacing: clamp(1px, 2vw, 3px);
+    line-height: clamp(25px, 1vw, 30px);
+}
+
 /* 
 -----------------------------------------------------------------------------
-PROPIEDADES PARA LOS BOTONES
+ANIMACIONES GENERALES
 -----------------------------------------------------------------------------
 */
 
@@ -35,6 +45,10 @@ PROPIEDADES PARA LOS BOTONES
     0% { transform: scale(1); }
     50% { transform: scale(0.95); }
     100% { transform: scale(1); }
+}
+
+.rotar:hover::before {
+    transform: rotate(360deg);
 }
 /* 
 -----------------------------------------------------------------------------
@@ -94,6 +108,10 @@ BOTÓN DE NAVEGACIÓN
     width: 62%;
 }
 
+#checkbox-menu:checked ~ .boton-navegacion {
+    filter: brightness(0.87);
+}
+
 /* 
 -----------------------------------------------------------------------------
 MENU DE NAVEGACIÓN 
@@ -101,16 +119,73 @@ MENU DE NAVEGACIÓN
 */
 
 #checkbox-menu:not(:checked) ~ .menu-navegacion {
-    display:none;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-20px); /* Optional: add a slide effect */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition setup */
+}
+
+#checkbox-menu:checked ~ .menu-navegacion {
+    pointer-events: auto;   
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition setup */
 }
 
 .menu-navegacion {
     position: absolute;
-    width: fit-content;
-    height: fit-content;
-    top: clamp(80px, 10.5vw, 110px);
-    right: clamp(70px, 10.5vw, 110px);
+    top: clamp(80px, 12vw, 110px);
+    right: clamp(70px, 12vw, 110px);
 }
+
+#primero::before {
+    content: ''; /* Required for the pseudo-element */
+    position: absolute; /* Position it absolutely */
+    width: clamp(20px, 5vw, 30px); /* Set the width of the image */
+    height: clamp(20px, 5vw, 30px); /* Set the height of the image */
+    right: clamp(122px, 5vw, 150px);
+    background-image: url('../img/heart.svg'); /* Image for first item */
+    background-size: contain; /* Resize to fit */
+    background-repeat: no-repeat; /* Prevent repeating */
+    transition: transform 0.5s ease;
+}
+
+#segundo::before {
+    content: ''; /* Required for the pseudo-element */
+    position: absolute; /* Position it absolutely */
+    width: clamp(20px, 5vw, 30px); /* Set the width of the image */
+    height: clamp(25px, 5vw, 30px); /* Set the height of the image */
+    right: clamp(122px, 5vw, 150px);
+    background-image: url('../img/estrella.svg'); /* Image for first item */
+    background-size: contain; /* Resize to fit */
+    background-repeat: no-repeat; /* Prevent repeating */
+    transition: transform 0.5s ease;
+}
+
+#tercero::before {
+    content: ''; /* Required for the pseudo-element */
+    position: absolute; /* Position it absolutely */
+    width: clamp(25px, 3vw, 25px); /* Set the width of the image */
+    height: clamp(20px, 3vw, 25px); /* Set the height of the image */
+    right: clamp(118px, 23vw, 124px);
+    background-image: url('../img/figura.svg'); /* Image for first item */
+    background-size: contain; /* Resize to fit */
+    background-repeat: no-repeat; /* Prevent repeating */
+    transition: transform 0.5s ease;
+}
+
+#cuarto::before {
+    content: ''; /* Required for the pseudo-element */
+    position: absolute; /* Position it absolutely */
+    width: clamp(25px, 3vw, 28px); /* Set the width of the image */
+    height: clamp(20px, 3vw, 30px); /* Set the height of the image */
+    right: clamp(118px, 23vw, 124px);
+    background-image: url('../img/polvora.svg'); /* Image for first item */
+    background-size: contain; /* Resize to fit */
+    background-repeat: no-repeat; /* Prevent repeating */
+    transition: transform 0.5s ease;
+}
+
 
 /* 
 -----------------------------------------------------------------------------
@@ -131,6 +206,7 @@ BOTÓN DE CHAT
 }
 
 .boton-chat p {
-    font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
     font-weight: 600;
+    font-family: sans-serif;
 }
