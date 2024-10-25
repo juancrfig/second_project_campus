@@ -22,7 +22,18 @@
 .gulfs {
     font-family: "Gulfs Display";
     letter-spacing: clamp(1px, 2vw, 3px);
-    line-height: clamp(10px, 8vw, 75px);
+}
+
+/* 
+--------------------------------------------------------------------------
+MEDIA QUERIES
+--------------------------------------------------------------------------
+*/
+
+@media (max-width: 150px) {
+    .icono-nav {
+        display: none;
+    }
 }
 
 /* 
@@ -154,19 +165,35 @@ MENU DE NAVEGACIÓN
 
 }
 
+.contenedor-nav-menu {
+    position: absolute;
+    display: flex;
+    border: 1px solid black;
+    width: 99vw;
+    height: clamp(40px, 28vw, 350px);
+    top: clamp(60px, 12vw, 500px);
+}
+
 .menu-navegacion {
     position: relative;
-    top: clamp(60px, 12vw, 500px);
-    width: clamp(45px, 1vw, 100px);
-    min-height: 200px;
-    /* display: grid;
+    right: clamp(0%, -5%, 0%);
+    width: clamp(45px, 1vw, 80px);
+    display: grid;
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: repeat(4, 4fr); */
+    grid-template-rows: repeat(4, 4fr);
+}
+
+.item {
+    grid-column: 2 / 3;
+}
+
+.icono-nav {
+    width: 7vw;
+    padding-right: 2vw;
 }
 
 .menu-navegacion .gulfs {
-    font-size: clamp(6px, 6vw, 100px)
-
+    font-size: clamp(6px, 5vw, 40px);
 }
 
 /* 
