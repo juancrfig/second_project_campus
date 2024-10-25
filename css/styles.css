@@ -11,33 +11,58 @@
     margin: auto;
 }
 
+.oculto {
+    display: none;
+}
+
+/* 
+-----------------------------------------------------------------------------
+PROPIEDADES PARA LOS BOTONES
+-----------------------------------------------------------------------------
+*/
+
+.boton:hover {
+    filter: brightness(0.87);
+    cursor: pointer;
+}
+
+/*  I DON'T KNOW HOW WORKS THIS ANIMATION */
+.boton:active {
+    animation: pressButton 0.2s ease;
+}
+
+@keyframes pressButton {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
 /* 
 -----------------------------------------------------------------------------
 SECCIONES DE LA PAGINA
 -----------------------------------------------------------------------------
 */
 
-.seccion-inicial {
+#seccion-inicial {
     height: 60vh;
     background-color: #F1B4D6;
 }
 
-.seccion-nosotros {
+#seccion-nosotros {
     height: 100vh;
     background-color: #FFF35F;
 }
 
-.seccion-galeria {
+#seccion-galeria {
     height: 70vh;
     background-color: orangered;
 }
 
-.seccion-precios {
+#seccion-precios {
     height: 160vh;
     background-color: aliceblue;
 }
 
-.seccion-contacto {
+#seccion-contacto {
     height: 100vh;
     background-color: #F1B4D6;
 }
@@ -50,10 +75,10 @@ BOTÓN DE NAVEGACIÓN
 
 .boton-navegacion {
     position: absolute;
-    background-color: transparent;
+    background-color: #F1B4D6;
     margin: 2% 1%;
-    height: 7vh;
-    width: 7vh;
+    width: clamp(60px, 9vw, 80px);
+    height: clamp(60px, 9vw, 80px);
     right: 1%;
     border: 2px solid black;
     border-radius: 50%;
@@ -71,6 +96,24 @@ BOTÓN DE NAVEGACIÓN
 
 /* 
 -----------------------------------------------------------------------------
+MENU DE NAVEGACIÓN 
+-----------------------------------------------------------------------------
+*/
+
+#checkbox-menu:not(:checked) ~ .menu-navegacion {
+    display:none;
+}
+
+.menu-navegacion {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    top: clamp(80px, 10.5vw, 110px);
+    right: clamp(70px, 10.5vw, 110px);
+}
+
+/* 
+-----------------------------------------------------------------------------
 BOTÓN DE CHAT 
 -----------------------------------------------------------------------------
 */
@@ -78,8 +121,8 @@ BOTÓN DE CHAT
 .boton-chat {
     position: fixed;
     margin: 2% 1%;
-    height: 10vh;
-    width: 10vh;
+    width: clamp(70px, 12vw, 100px);
+    height: clamp(70px, 12vw, 100px);
     bottom: 1%;
     right: 1%;
     border: 2px solid black;
@@ -88,6 +131,6 @@ BOTÓN DE CHAT
 }
 
 .boton-chat p {
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 3.5vw, 1.5rem);
     font-weight: 600;
 }

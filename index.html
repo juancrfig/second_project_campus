@@ -10,16 +10,25 @@
     <title>Captura de Emociones</title>
 </head>
 <body>
-    <section class="seccion-inicial">
-        <button class="boton-navegacion">
+    <section id="seccion-inicial">
+        <input type="checkbox" id="checkbox-menu" class="oculto">
+        <label for="checkbox-menu" class="boton-navegacion boton">
             <img src="./img/menu-burger.svg" alt="Icono menu navegación">
-        </button>
+        </label>
+        <nav class="menu-navegacion">
+            <ul>
+                <li><a href="#seccion-nosotros">NOSOTROS</a></li>
+                <li><a href="#seccion-galeria">GALERIA</a></li>
+                <li><a href="#seccion-precios">PRECIOS</a></li>
+                <li><a href="#seccion-contacto">CONTACTO</a></li>
+            </ul>
+        </nav>
     </section>
-    <section class="seccion-nosotros"></section>
-    <section class="seccion-galeria"></section>
-    <section class="seccion-precios"></section>
-    <section class="seccion-contacto"></section>
-    <button class="boton-chat">
+    <section id="seccion-nosotros"></section>
+    <section id="seccion-galeria"></section>
+    <section id="seccion-precios"></section>
+    <section id="seccion-contacto"></section>
+    <button class="boton-chat boton">
         <p>CHAT</p>
     </button>
 </body>
