@@ -149,16 +149,25 @@ MENU DE NAVEGACIÓN
     transition: opacity 0.5s ease, transform 0.5s ease; /* Transition setup */
 }
 
-.menu-navegacion {
-    min-width: 100px;
-    min-height: 200px;
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: repeat(4, 4fr);
-    font-size: clamp(5px, 1rem, 2rem);
-    line-height: 100px;
+.menu-navegacion ul {
+    display: none;
+
 }
 
+.menu-navegacion {
+    position: relative;
+    top: clamp(60px, 12vw, 500px);
+    width: clamp(45px, 1vw, 100px);
+    min-height: 200px;
+    /* display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: repeat(4, 4fr); */
+}
+
+.menu-navegacion .gulfs {
+    font-size: clamp(6px, 6vw, 100px)
+
+}
 
 /* 
 -----------------------------------------------------------------------------
@@ -206,8 +215,8 @@ BOTÓN DE CHAT
 .boton-chat {
     position: fixed;
     margin: 2% 1%;
-    width: clamp(48px, 11vw, 80px);
-    height: clamp(48px, 11vw, 80px);
+    width: clamp(48px, 13vw, 80px);
+    height: clamp(48px, 13vw, 80px);
     bottom: 1%;
     right: 1%;
     border: 2px solid black;
@@ -216,7 +225,7 @@ BOTÓN DE CHAT
 }
 
 .boton-chat p {
-    font-size: clamp(0.6rem, 2vw, 1.5rem);
+    font-size: clamp(0.6rem, 3vw, 1.2rem);
     font-weight: 600;
     font-family: sans-serif;
 }
