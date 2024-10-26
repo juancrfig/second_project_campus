@@ -21,19 +21,10 @@
 
 .gulfs {
     font-family: "Gulfs Display";
-    letter-spacing: clamp(1px, 2vw, 3px);
 }
 
-/* 
---------------------------------------------------------------------------
-MEDIA QUERIES
---------------------------------------------------------------------------
-*/
-
-@media (max-width: 150px) {
-    .icono-nav {
-        display: none;
-    }
+.decoracion {
+    position: absolute;
 }
 
 /* 
@@ -47,6 +38,11 @@ ANIMACIONES GENERALES
     cursor: pointer;
 }
 
+.hyper:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+} 
+
 /*  I DON'T KNOW HOW WORKS THIS ANIMATION */
 .boton:active {
     animation: pressButton 0.2s ease;
@@ -54,13 +50,50 @@ ANIMACIONES GENERALES
 
 @keyframes pressButton {
     0% { transform: scale(1); }
-    50% { transform: scale(0.95); }
+    50% { transform: scale(0.88); }
     100% { transform: scale(1); }
 }
 
-.rotar:hover::before {
-    transform: rotate(360deg);
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+@keyframes twinkle {
+    0%, 100% {
+      opacity: 0.2;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
 }
+
+@keyframes twinkle-and-move {
+    0%, 100% {
+      opacity: 0.2;
+      transform: scale(0.8) translate(0, 0);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2) translate(2px, -2px);
+    }
+}
+
+@keyframes tilt {
+    0%, 100% {
+      transform: rotate(-5deg);
+    }
+    50% {
+      transform: rotate(5deg);
+    }
+  }
+
 /* 
 -----------------------------------------------------------------------------
 SECCIONES DE LA PAGINA
@@ -74,22 +107,18 @@ SECCIONES DE LA PAGINA
 }
 
 #seccion-nosotros {
-    height: 100vh;
     background-color: #FFF35F;
 }
 
 #seccion-galeria {
-    height: 70vh;
     background-color: orangered;
 }
 
 #seccion-precios {
-    height: 160vh;
     background-color: aliceblue;
 }
 
 #seccion-contacto {
-    height: 100vh;
     background-color: #F1B4D6;
 }
 
@@ -103,8 +132,6 @@ BOTÓN DE NAVEGACIÓN
     position: absolute;
     background-color: #F1B4D6;
     margin: 2% 1%;
-    width: clamp(48px, 9vw, 80px);
-    height: clamp(48px, 9vw, 80px);
     right: 1%;
     border: 2px solid black;
     border-radius: 50%;
@@ -160,20 +187,16 @@ MENU DE NAVEGACIÓN
     transition: opacity 0.5s ease, transform 0.5s ease; /* Transition setup */
 }
 
-.menu-navegacion ul {
-    display: none;
+#checkbox-menu {
+    display:none;
 }
 
 .menu-navegacion {
-    position: relative;
-    border: 1px solid #1e5de4;
+    position: absolute;
     width: fit-content;
-    right: clamp(0px, 1vw, 10px);
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: repeat(4, 4fr);
-    left: 31vh;
-    top: 10vw
 }
 
 .item {
@@ -198,34 +221,21 @@ TITULO E IMAGENES SECCION INICIAL
 #seccion-inicial h1 {
     position: relative;
     color: #1357EB;
-    font-size: clamp(1rem, 9.5vw, 5rem);
     text-align: center;
-    top: clamp(240px, 30vw,1000px );
     font-weight: 500;
     z-index: 1;
 }
 
 #seccion-inicial .caja-imagen {
     position: relative;
-    z-index: 0;
-    text-align: center;
-    display: flex;
     border: 2px solid black;
-    top: 50%;
-    border-radius: 40%;
+    border-radius: 40vw;
     overflow: hidden;
-    margin-top: -3%;
-    width: clamp(300px, 5vw, 1000px);
-    height: clamp(300px, 5vw, 1000px);
-
 }
 
-#imagen-seccion-inicial {
-    height: clamp(400px, 8vw, 1500px);
-    width: clamp(300px, 5vw, 1000px);
-    object-fit: cover;
+.circulo-sonriente {
+    animation: spin 7s linear infinite;
 }
-
 /* 
 -----------------------------------------------------------------------------
 BOTÓN DE CHAT 
@@ -245,7 +255,118 @@ BOTÓN DE CHAT
 }
 
 .boton-chat p {
-    font-size: clamp(0.6rem, 3vw, 1.2rem);
     font-weight: 600;
     font-family: sans-serif;
+}
+
+/* 
+--------------------------------------------------------------------------
+MEDIA QUERIES
+--------------------------------------------------------------------------
+*/
+
+@media (max-width: 500px) {
+
+    #seccion-inicial {
+        height: clamp(390px, 10vw, 410px);
+    }
+
+    #seccion-nosotros {
+        height: clamp(300px, 10vw, 400px);
+    }
+
+    .menu-navegacion {
+        right: clamp(60px, 1vw, 70px);
+        top: clamp(55px, 1vw, 80px);
+    }
+
+    .menu-navegacion .gulfs {
+        font-size: clamp(0.6rem, 4vw, 3rem);
+    }
+
+    .boton-navegacion {
+        width: clamp(60px, 1vw, 70px);
+        height: clamp(60px, 1vw, 70px);
+    }
+
+    .boton-chat {
+        width: clamp(70px, 1vw, 80px);
+        height: clamp(70px, 1vw, 80px);
+    }
+
+    #seccion-inicial h1 {
+        font-size: clamp(2.2rem, 11vw, 3rem);
+        top: clamp(165px, 40vw, 300px);
+        line-height: 2rem;
+    }
+
+    #seccion-inicial .caja-imagen {
+        display: flex;
+        justify-content: center;
+        width: fit-content;
+        height: fit-content;
+        top: clamp(150px, 15vw, 1040px);  
+        margin: auto;      
+    }
+
+    #imagen-principal {
+        width: clamp(245px, 15vw, 746px);
+    }
+
+    .estrella1 {
+        top: clamp(192px, 1vw, 20px);
+        left: clamp(15px, 1vw, 20px);
+        width: clamp(20px, 1rem, 30px);
+        animation: twinkle-and-move 2.5s infinite ease-in-out 0.4s;    }
+
+    .rayo {
+        top: clamp(270px, 1vw, 300px);
+        right: clamp(5px, 1vw, 20px);
+        width: clamp(50px, 1rem, 30px);
+        animation: tilt 2s ease-in-out infinite;
+    }
+
+    .estrella2 {
+        top: clamp(322px, 1vw, 20px);
+        right: clamp(15px, 1vw, 20px);
+        width: clamp(18px, 1rem, 30px);
+        animation: twinkle-and-move 2.5s infinite ease-in-out 0.4s;
+    }
+
+    .estrella3 {
+        top: clamp(300px, 1vw, 20px);
+        left: clamp(5px, 1vw, 20px);
+        width: clamp(30px, 1rem, 30px);
+        animation: twinkle-and-move 2.5s infinite ease-in-out 0.4s;
+    }
+
+    .circulo-sonriente {
+        top: clamp(510px, 1vw, 20px);
+        left: clamp(65px, 1vw, 65px);
+        width: clamp(88px, 1rem, 90px);
+    }
+
+    .boton1 {
+        top: clamp(630px, 1vw, 20px);
+        left: clamp(5px, 1vw, 20px);
+        width: clamp(40px, 1rem, 30px);
+    }
+
+    .boton1:hover {
+        animation: pressButton 0.5s ease;    
+    }
+
+    .boton2:hover {
+        animation: pressButton 0.5s ease;
+    }
+    
+    .boton2 {
+        top: clamp(630px, 1vw, 20px);
+        right: clamp(5px, 1vw, 20px);
+        width: clamp(40px, 1rem, 30px);
+    }
+
+    .boton-chat p {
+        font-size: clamp(1.1rem, 3vw, 1.2rem);
+    }
 }
