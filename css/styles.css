@@ -7,12 +7,25 @@
     font-style: normal;
 }
 
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+img,
+picture,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
 * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-    color:inherit
+    color:inherit;
+    font: inherit;
 }
 
 .oculto {
@@ -187,9 +200,6 @@ MENU DE NAVEGACIÓN
     transition: opacity 0.5s ease, transform 0.5s ease; /* Transition setup */
 }
 
-#checkbox-menu {
-    display:none;
-}
 
 .menu-navegacion {
     position: absolute;
@@ -212,161 +222,3 @@ MENU DE NAVEGACIÓN
     font-size: clamp(6px, 5vw, 40px);
 }
 
-/* 
------------------------------------------------------------------------------
-TITULO E IMAGENES SECCION INICIAL
------------------------------------------------------------------------------
-*/
-
-#seccion-inicial h1 {
-    position: relative;
-    color: #1357EB;
-    text-align: center;
-    font-weight: 500;
-    z-index: 1;
-}
-
-#seccion-inicial .caja-imagen {
-    position: relative;
-    border: 2px solid black;
-    border-radius: 40vw;
-    overflow: hidden;
-}
-
-.circulo-sonriente {
-    animation: spin 7s linear infinite;
-}
-/* 
------------------------------------------------------------------------------
-BOTÓN DE CHAT 
------------------------------------------------------------------------------
-*/
-
-.boton-chat {
-    position: fixed;
-    margin: 2% 1%;
-    width: clamp(48px, 13vw, 80px);
-    height: clamp(48px, 13vw, 80px);
-    bottom: 1%;
-    right: 1%;
-    border: 2px solid black;
-    border-radius: 50%;
-    background-color: #FFF35F;
-}
-
-.boton-chat p {
-    font-weight: 600;
-    font-family: sans-serif;
-}
-
-/* 
---------------------------------------------------------------------------
-MEDIA QUERIES
---------------------------------------------------------------------------
-*/
-
-@media (max-width: 500px) {
-
-    #seccion-inicial {
-        height: clamp(390px, 10vw, 410px);
-    }
-
-    #seccion-nosotros {
-        height: clamp(300px, 10vw, 400px);
-    }
-
-    .menu-navegacion {
-        right: clamp(60px, 1vw, 70px);
-        top: clamp(55px, 1vw, 80px);
-    }
-
-    .menu-navegacion .gulfs {
-        font-size: clamp(0.6rem, 4vw, 3rem);
-    }
-
-    .boton-navegacion {
-        width: clamp(60px, 1vw, 70px);
-        height: clamp(60px, 1vw, 70px);
-    }
-
-    .boton-chat {
-        width: clamp(70px, 1vw, 80px);
-        height: clamp(70px, 1vw, 80px);
-    }
-
-    #seccion-inicial h1 {
-        font-size: clamp(2.2rem, 11vw, 3rem);
-        top: clamp(165px, 40vw, 300px);
-        line-height: 2rem;
-    }
-
-    #seccion-inicial .caja-imagen {
-        display: flex;
-        justify-content: center;
-        width: fit-content;
-        height: fit-content;
-        top: clamp(150px, 15vw, 1040px);  
-        margin: auto;      
-    }
-
-    #imagen-principal {
-        width: clamp(245px, 15vw, 746px);
-    }
-
-    .estrella1 {
-        top: clamp(192px, 1vw, 20px);
-        left: clamp(15px, 1vw, 20px);
-        width: clamp(20px, 1rem, 30px);
-        animation: twinkle-and-move 2.5s infinite ease-in-out 0.4s;    }
-
-    .rayo {
-        top: clamp(270px, 1vw, 300px);
-        right: clamp(5px, 1vw, 20px);
-        width: clamp(50px, 1rem, 30px);
-        animation: tilt 2s ease-in-out infinite;
-    }
-
-    .estrella2 {
-        top: clamp(322px, 1vw, 20px);
-        right: clamp(15px, 1vw, 20px);
-        width: clamp(18px, 1rem, 30px);
-        animation: twinkle-and-move 2.5s infinite ease-in-out 0.4s;
-    }
-
-    .estrella3 {
-        top: clamp(300px, 1vw, 20px);
-        left: clamp(5px, 1vw, 20px);
-        width: clamp(30px, 1rem, 30px);
-        animation: twinkle-and-move 2.5s infinite ease-in-out 0.4s;
-    }
-
-    .circulo-sonriente {
-        top: clamp(510px, 1vw, 20px);
-        left: clamp(65px, 1vw, 65px);
-        width: clamp(88px, 1rem, 90px);
-    }
-
-    .boton1 {
-        top: clamp(630px, 1vw, 20px);
-        left: clamp(5px, 1vw, 20px);
-        width: clamp(40px, 1rem, 30px);
-    }
-
-    .boton1:hover {
-        animation: pressButton 0.5s ease;    
-    }
-
-    .boton2:hover {
-        animation: pressButton 0.5s ease;
-    }
-    
-    .boton2 {
-        top: clamp(630px, 1vw, 20px);
-        right: clamp(5px, 1vw, 20px);
-        width: clamp(40px, 1rem, 30px);
-    }
-
-    .boton-chat p {
-        font-size: clamp(1.1rem, 3vw, 1.2rem);
-    }
-}
